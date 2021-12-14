@@ -1,0 +1,2 @@
+Current Focus: Properly Link the css from our index.html:
+* this mostly boils down to reading the webpack documentation.
