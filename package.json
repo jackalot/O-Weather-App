@@ -1,5 +1,5 @@
 {
-  "name": "O-Forms-Practice",
+  "name": "O-Weather-App",
   "version": "1.0.0",
   "description": "This will have a basic form that collects email, country, zip code, password and password confirmation data.",
   "main": "index.js",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/jackalot/O-Forms-Practice#readme",
   "devDependencies": {
-    "eslint": "^8.4.0",
+    "eslint": "^8.4.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
     "webpack": "^5.64.4",
