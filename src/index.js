@@ -101,7 +101,6 @@ function validateForm() {
     });
   });
   submit.addEventListener('click', () => {
-    console.log('click');
     const email = validateEmail();
     const country = validateCountry();
     const zipCode = validateZipCode();
