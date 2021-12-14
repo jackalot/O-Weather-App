@@ -1,1 +1,1 @@
-This will have a basic form that collects email, country, zip code, password and password confirmation data.
+This will be a weather app that checks the weather in a given city using a weather API and give you a giff via giphy. There will be a form that you can enter your city in and while it fetches the weather, there will be a loading symbol.
