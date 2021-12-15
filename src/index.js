@@ -8,5 +8,5 @@ const fetchGiffyBtn = document.querySelector('.fetch-giffy');
 fetchGiffyBtn.addEventListener('click', () => {
   fetchGiffy();
   //    later we can add a parameter to fetchGiffy() to display for example,
-  //    clear weather, for now it will display something related to sample
+  //    a clear weather giff, for now it will display something related to sample
 });
