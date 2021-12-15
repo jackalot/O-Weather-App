@@ -1,22 +1,5 @@
 Current Focus, write functions that hit our apis:
-* in index.html, make a button with the class and text "fetch giffy"
-* in index.js, make an async function called fetchGiffy()
-{
-    - it will have a reference to the empty giffy image element via document.querySelector()
-    - it will have a variable called response that equals an await
-    fetch request to our api to giffy and it will be mode cors (which will be to:
-     "https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=cats")
-    - we will store the response after parsing through the json() method via a 'querydata' variable;
-    - then the img.src will equal querydata.data.images.original.url;
-}
-* under that function is something to call it 
 * in index.html, make a button with the class and text "fetch weather"
 ( we'll use this for testing later )
 - still in index.html, make an empty p tag that will be used for displaying the weather.
 psuedo script (index.js):
-async function fetchGiffy() {
-    const image = document.querySelector('.giffy');
-    const response = await fetch("https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=cats", { mode: 'cors'})
-    const queryData = await response.json();
-    img.src = queryData.data.images.original.url;
-}
