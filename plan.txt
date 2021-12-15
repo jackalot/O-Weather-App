@@ -6,3 +6,6 @@ and then make it have the body as the parent. ** using npm package "@jackalot/cr
 the selected item in the dropdown.
 - if 'zip code and country' is selected, two fields, one labeled country, and one labeled zip code will be
 selected due to zip code defaulting to the USA.
+psuedo code:
+const body = document.querySelector(body);
+createDropdown(body, 'How would you like to find the weather?', ['city name', 'zip code and country', 'longitude and latitude' ]);
