@@ -12,7 +12,7 @@ Current Focus, write functions that hit our apis:
     - we will then log the weatherData
 }
 psuedo script (index.js):
-async function fetchGiffy() {
+async function fetchWeather() {
   const weatherParagraph = document.querySelector('.weather');
   const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ea13d76af44f95e6e901a4a69585bb22', { mode: 'cors' });
   const weatherData = await response.json();
