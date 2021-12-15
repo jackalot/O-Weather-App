@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://O-Weather-App/./src/index.js?");
+eval("async function fetchGiffy() {\n  const image = document.querySelector('.giffy');\n  const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=sample', { mode: 'cors' });\n  const queryData = await response.json();\n  image.src = queryData.data.images.original.url;\n}\nconst fetchGiffyBtn = document.querySelector('.fetch-giffy');\nfetchGiffyBtn.addEventListener('click', () => {\n  fetchGiffy();\n  //    later we can add a parameter to fetchGiffy() to display for example,\n  //    a clear weather giff, for now it will display something related to sample\n});\n\n\n//# sourceURL=webpack://O-Weather-App/./src/index.js?");
 
 /***/ })
 
