@@ -1,3 +1,5 @@
+import createDropdown from '@jackalot/createdropdown.js';
+
 async function fetchGiffy() {
   const image = document.querySelector('.giffy');
   const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=sample', { mode: 'cors' });
@@ -21,3 +23,5 @@ const fetchWeatherBtn = document.querySelector('.fetch-weather');
 fetchWeatherBtn.addEventListener('click', () => {
   fetchWeather();
 });
+const body = document.querySelector('body');
+createDropdown(body, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);
