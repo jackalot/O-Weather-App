@@ -1,2 +1,7 @@
-Current Focus: Properly Link the css from our index.html:
-* this mostly boils down to reading the webpack documentation.
+Current Focus, write functions that hit our apis:
+* in index.html, make a button with the class and text "fetch giffy"
+( we'll use this for testing later )
+- still in index.html, make an empty img that will be used for displaying a giff.
+* in index.html, make a button with the class and text "fetch weather"
+( we'll use this for testing later )
+- still in index.html, make an empty p tag that will be used for displaying the weather.
