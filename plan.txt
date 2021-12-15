@@ -1,1 +1,4 @@
 Current Focus, create a form the will let the user input where they want to have the weather:
+* in index.js, create a dropdown named 'How would you like to find the weather?' with the options:
+['city name', 'zip code', 'longitude and latitude' ]
+and then make it have the body as the parent. ** using npm package "@jackalot/createdropdown.js": "^1.0.0"
