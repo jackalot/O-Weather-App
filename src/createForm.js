@@ -15,7 +15,7 @@ function createForm() {
     const joined = split.join('-');
     const field = document.createElement('input');
     field.type = fieldType;
-    field.classList.add('Field');
+    field.classList.add(joined, 'Field-entry');
     field.setAttribute('name', fieldName);
     body.appendChild(field);
   }
