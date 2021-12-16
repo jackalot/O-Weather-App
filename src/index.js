@@ -15,8 +15,8 @@ fetchGiffyBtn.addEventListener('click', () => {
   //    a clear weather giff, for now it will display something related to sample
 });
 async function fetchWeather(fetchRequest) {
-  const weatherParagraph = document.querySelector('.weather');
-  const response = await fetch(fetchRequest, { mode: 'cors' });
+  //  const weatherParagraph = document.querySelector('.weather');
+  const response = await fetch(`${fetchRequest}`, { mode: 'cors' });
   const weatherData = await response.json();
   console.log(weatherData);
 }
@@ -34,7 +34,9 @@ fetchWeatherBtn.addEventListener('click', () => {
       fetchWeather(`api.openweathermap.org/data/2.5/weather?zip=${zipCode.value},${country.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
       break;
     case 'longitude and latitude':
-      fetchWeather('');
+      const longitude = document.querySelector('.longitude');
+      const latitude = document.querySelector('.latitude');
+      fetchWeather(`api.openweathermap.org/data/2.5/weather?lat=${latitude.value}&lon=${longitude.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
       break;
     default:
       fetchWeather('http://api.openweathermap.org/data/2.5/weather?q=Miami&APPID=ea13d76af44f95e6e901a4a69585bb22');
