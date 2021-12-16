@@ -10,10 +10,17 @@ function createForm() {
     x.append(y);
     body.appendChild(x);
   }
-  function createNewField() {
-
+  function createNewField(fieldType) {
+    const split = fieldType.split(' ');
+    const joined = split.join('-');
+    const field = document.createElement('input');
+    field.type = 'text';
+    field.classList.add(joined);
+    field.setAttribute('name', joined);
+    body.appendChild(field);
   }
   createNewLabel('this is a test');
+  createNewField('this is a test');
   const dropdownOptions = document.querySelector('.dropDown-Options');
   dropdownOptions.addEventListener('click', () => {
 
