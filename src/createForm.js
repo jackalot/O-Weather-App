@@ -10,8 +10,8 @@ function createForm() {
     x.append(y);
     body.appendChild(x);
   }
-  function createNewField(fieldType) {
-    const split = fieldType.split(' ');
+  function createNewField(fieldName) {
+    const split = fieldName.split(' ');
     const joined = split.join('-');
     const field = document.createElement('input');
     field.type = 'text';
