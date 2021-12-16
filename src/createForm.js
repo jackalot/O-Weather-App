@@ -55,13 +55,17 @@ function createForm() {
           createNewField('country', 'Text');
         });
       } else if (element.textContent === 'longitude and latitude') {
-        createNewLabel('longitude');
-        createNewField('longitude', 'Number');
-        createNewLabel('latitude');
-        createNewField('latitude', 'Number');
+        removeFields('longitude', 'latitude').then(() => {
+          createNewLabel('longitude');
+          createNewField('longitude', 'Number');
+          createNewLabel('latitude');
+          createNewField('latitude', 'Number');
+        });
       } else {
-        createNewLabel(element.textContent);
-        createNewField(element.textContent);
+        removeFields(element.textContent, element.textContent).then(() => {
+          createNewLabel(element.textContent);
+          createNewField(element.textContent);
+        });
       }
     });
   });
