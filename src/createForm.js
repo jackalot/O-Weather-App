@@ -19,11 +19,22 @@ function createForm() {
     field.setAttribute('name', fieldName);
     body.appendChild(field);
   }
-  function removeFields(exception1, exception2) {
+  //    we need this function to remove the label
+  function findAllLabels(name) {
+    const labels = document.querySelectorAll('label');
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < labels.length; i++) {
+      if (labels[i].getAttribute('for') === name) {
+        return labels[i];
+      }
+    }
+  }
+  async function removeFields(exception1, exception2) {
     const allFields = document.querySelectorAll('.Field-Entry');
     allFields.forEach((element) => {
       if (element.textContent !== exception1 || element.textContent !== exception2) {
-        const label = document.querySelector(element.name);
+        const label = findAllLabels(element.name);
+        label.parentNode.removeChild(label);
         element.parentNode.removeChild(element);
       }
     });
