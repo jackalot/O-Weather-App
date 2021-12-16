@@ -10,12 +10,12 @@ function createForm() {
     x.append(y);
     body.appendChild(x);
   }
-  function createNewField(fieldName) {
+  function createNewField(fieldName, fieldType) {
     const split = fieldName.split(' ');
     const joined = split.join('-');
     const field = document.createElement('input');
-    field.type = 'text';
-    field.classList.add(joined);
+    field.type = fieldType;
+    field.classList.add('Field');
     field.setAttribute('name', fieldName);
     body.appendChild(field);
   }
@@ -25,9 +25,14 @@ function createForm() {
       console.log('click');
       if (element.textContent === 'zip code and country') {
         createNewLabel('zip code');
-        createNewField('zip code');
+        createNewField('zip code', 'Number');
         createNewLabel('country');
-        createNewField('country');
+        createNewField('country', 'Text');
+      } else if (element.textContent === 'longitude and latitude') {
+        createNewLabel('longitude');
+        createNewField('longitude', 'Number');
+        createNewLabel('latitude');
+        createNewField('latitude', 'Number');
       } else {
         createNewLabel(element.textContent);
         createNewField(element.textContent);
