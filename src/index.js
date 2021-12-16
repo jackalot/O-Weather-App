@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import createForm from './createForm';
 
 async function fetchGiffy() {
@@ -24,11 +25,13 @@ fetchWeatherBtn.addEventListener('click', () => {
   const dropdownBtn = document.querySelector('#How-would-you-like-to-find-the-weather-dropDownButton');
   switch (dropdownBtn.textContent) {
     case 'city name':
-      // eslint-disable-next-line no-case-declarations
       const cityName = document.querySelector('.city-name');
       fetchWeather(`http://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&APPID=ea13d76af44f95e6e901a4a69585bb22`);
       break;
     case 'zip code and country':
+      const zipCode = document.querySelector('.zip-code');
+      const country = document.querySelector('.country');
+      fetchWeather(`api.openweathermap.org/data/2.5/weather?zip=${zipCode.value},${country.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
       break;
     case 'longitude and latitude':
       fetchWeather('');
