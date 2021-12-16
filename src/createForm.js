@@ -28,12 +28,16 @@ function createForm() {
         return labels[i];
       }
     }
+    return 'no label';
   }
   async function removeFields(exception1, exception2) {
     const allFields = document.querySelectorAll('.Field-Entry');
     allFields.forEach((element) => {
       if (element.textContent !== exception1 || element.textContent !== exception2) {
         const label = findAllLabels(element.name);
+        if (label === 'no label') {
+          throw Error;
+        }
         label.parentNode.removeChild(label);
         element.parentNode.removeChild(element);
       }
