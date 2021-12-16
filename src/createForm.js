@@ -16,14 +16,23 @@ function createForm() {
     const field = document.createElement('input');
     field.type = 'text';
     field.classList.add(joined);
-    field.setAttribute('name', joined);
+    field.setAttribute('name', fieldName);
     body.appendChild(field);
   }
-  createNewLabel('this is a test');
-  createNewField('this is a test');
-  const dropdownOptions = document.querySelector('.dropDown-Options');
-  dropdownOptions.addEventListener('click', () => {
-
+  const dropdownOptions = document.querySelectorAll('.dropDown-Options');
+  dropdownOptions.forEach((element) => {
+    element.addEventListener('click', () => {
+      console.log('click');
+      if (element.textContent === 'zip code and country') {
+        createNewLabel('zip code');
+        createNewField('zip code');
+        createNewLabel('country');
+        createNewField('country');
+      } else {
+        createNewLabel(element.textContent);
+        createNewField(element.textContent);
+      }
+    });
   });
 }
 export default createForm;
