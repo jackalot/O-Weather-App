@@ -19,6 +19,17 @@ eval("function createDropdown(parent, labelText, options) {\n    const split = l
 
 /***/ }),
 
+/***/ "./src/createForm.js":
+/*!***************************!*\
+  !*** ./src/createForm.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @jackalot/createdropdown.js */ \"./node_modules/@jackalot/createdropdown.js/index.js\");\n/* harmony import */ var _jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction createForm() {\n  const body = document.querySelector('body');\n  _jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0___default()(body, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createForm);\n\n\n//# sourceURL=webpack://O-Weather-App/./src/createForm.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -26,7 +37,7 @@ eval("function createDropdown(parent, labelText, options) {\n    const split = l
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @jackalot/createdropdown.js */ \"./node_modules/@jackalot/createdropdown.js/index.js\");\n/* harmony import */ var _jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nasync function fetchGiffy() {\n  const image = document.querySelector('.giffy');\n  const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=sample', { mode: 'cors' });\n  const queryData = await response.json();\n  image.src = queryData.data.images.original.url;\n}\n\nconst fetchGiffyBtn = document.querySelector('.fetch-giffy');\nfetchGiffyBtn.addEventListener('click', () => {\n  fetchGiffy();\n  //    later we can add a parameter to fetchGiffy() to display for example,\n  //    a clear weather giff, for now it will display something related to sample\n});\nasync function fetchWeather() {\n  const weatherParagraph = document.querySelector('.weather');\n  const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Miami&APPID=ea13d76af44f95e6e901a4a69585bb22', { mode: 'cors' });\n  const weatherData = await response.json();\n  console.log(weatherData);\n}\nconst fetchWeatherBtn = document.querySelector('.fetch-weather');\nfetchWeatherBtn.addEventListener('click', () => {\n  fetchWeather();\n});\nconst body = document.querySelector('body');\n_jackalot_createdropdown_js__WEBPACK_IMPORTED_MODULE_0___default()(body, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);\n\n\n//# sourceURL=webpack://O-Weather-App/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _createForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createForm */ \"./src/createForm.js\");\n\n\nasync function fetchGiffy() {\n  const image = document.querySelector('.giffy');\n  const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=sample', { mode: 'cors' });\n  const queryData = await response.json();\n  image.src = queryData.data.images.original.url;\n}\n\nconst fetchGiffyBtn = document.querySelector('.fetch-giffy');\nfetchGiffyBtn.addEventListener('click', () => {\n  fetchGiffy();\n  //    later we can add a parameter to fetchGiffy() to display for example,\n  //    a clear weather giff, for now it will display something related to sample\n});\nasync function fetchWeather() {\n  const weatherParagraph = document.querySelector('.weather');\n  const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Miami&APPID=ea13d76af44f95e6e901a4a69585bb22', { mode: 'cors' });\n  const weatherData = await response.json();\n  console.log(weatherData);\n}\nconst fetchWeatherBtn = document.querySelector('.fetch-weather');\nfetchWeatherBtn.addEventListener('click', () => {\n  fetchWeather();\n});\n(0,_createForm__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n\n//# sourceURL=webpack://O-Weather-App/./src/index.js?");
 
 /***/ })
 
