@@ -1,4 +1,4 @@
-import createDropdown from '@jackalot/createdropdown.js';
+import createForm from './createForm';
 
 async function fetchGiffy() {
   const image = document.querySelector('.giffy');
@@ -23,5 +23,4 @@ const fetchWeatherBtn = document.querySelector('.fetch-weather');
 fetchWeatherBtn.addEventListener('click', () => {
   fetchWeather();
 });
-const body = document.querySelector('body');
-createDropdown(body, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);
+createForm();
