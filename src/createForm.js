@@ -10,6 +10,13 @@ function createForm() {
     x.append(y);
     body.appendChild(x);
   }
+  function createNewField() {
+
+  }
   createNewLabel('this is a test');
+  const dropdownOptions = document.querySelector('.dropDown-Options');
+  dropdownOptions.addEventListener('click', () => {
+
+  });
 }
 export default createForm;
