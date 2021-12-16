@@ -1,11 +1,3 @@
-Current Focus, create a form the will let the user input where they want to have the weather:
-* in index.js, create a dropdown named 'How would you like to find the weather?' with the options:
-['city name', 'zip code and country', 'longitude and latitude' ]
-and then make it have the body as the parent. ** using npm package "@jackalot/createdropdown.js": "^1.0.0"
-- after the dropdown gets clicked, make a promise that there will be a new field and a label based off
-the selected item in the dropdown.
-- if 'zip code and country' is selected, two fields, one labeled country, and one labeled zip code will be
-selected due to zip code defaulting to the USA.
-psuedo code:
-const body = document.querySelector(body);
-createDropdown(body, 'How would you like to find the weather?', ['city name', 'zip code and country', 'longitude and latitude' ]);
+Current Focus, grab data from the form thats created:
+* refactor the fetchWeatherbutton to check what type of data has been input into the form
+* it will then send the fetchWeather function the correct Paramaters for what to do an api fetch for.
