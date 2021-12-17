@@ -8,10 +8,6 @@ async function fetchGiffy(searchTerm) {
   image.src = queryData.data.images.original.url;
 }
 
-const fetchGiffyBtn = document.querySelector('.fetch-giffy');
-fetchGiffyBtn.addEventListener('click', () => {
-  fetchGiffy('sample');
-});
 async function fetchWeather(fetchRequest) {
   const weatherParagraph = document.querySelector('.weather');
   const response = await fetch(`${fetchRequest}`, { mode: 'cors' });
