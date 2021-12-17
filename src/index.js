@@ -11,6 +11,7 @@ async function fetchGiffy(searchTerm) {
 async function fetchWeather(fetchRequest) {
   const weatherParagraph = document.querySelector('.weather');
   const response = await fetch(`${fetchRequest}`, { mode: 'cors' });
+  weatherParagraph.textContent = 'loading';
   const weatherData = await response.json();
   console.log(weatherData);
   weatherParagraph.textContent = `In ${weatherData.name}, there are currently ${weatherData.weather[0].description} out right now and
