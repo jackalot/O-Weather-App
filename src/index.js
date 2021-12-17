@@ -15,10 +15,14 @@ fetchGiffyBtn.addEventListener('click', () => {
   //    a clear weather giff, for now it will display something related to sample
 });
 async function fetchWeather(fetchRequest) {
-  //  const weatherParagraph = document.querySelector('.weather');
+  const weatherParagraph = document.querySelector('.weather');
   const response = await fetch(`${fetchRequest}`, { mode: 'cors' });
   const weatherData = await response.json();
   console.log(weatherData);
+  weatherParagraph.textContent = `There are currently ${weatherData.weather[0].description} out right now and
+  the wind speed is ${weatherData.wind.speed} with a degrees of ${weatherData.wind.deg}. It feels like its
+  ${weatherData.main.feels_like} outside but it really is ${weatherData.main.temp}, expect a minimum of
+  ${weatherData.main.temp_min} and a maximum of ${weatherData.main.temp_max}`;
 }
 const fetchWeatherBtn = document.querySelector('.fetch-weather');
 fetchWeatherBtn.addEventListener('click', () => {
