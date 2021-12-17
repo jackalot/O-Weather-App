@@ -1,14 +1,14 @@
 import createDropdown from '@jackalot/createdropdown.js';
 
 function createForm() {
-  const body = document.querySelector('body');
-  createDropdown(body, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);
+  const formDiv = document.querySelector('.form');
+  createDropdown(formDiv, 'How would you like to find the weather', ['city name', 'zip code and country', 'longitude and latitude']);
   function createNewLabel(labelText) {
     const x = document.createElement('LABEL');
     const y = document.createTextNode(labelText);
     x.setAttribute('for', labelText);
     x.append(y);
-    body.appendChild(x);
+    formDiv.appendChild(x);
   }
   function createNewField(fieldName, fieldType) {
     const split = fieldName.split(' ');
@@ -17,7 +17,7 @@ function createForm() {
     field.type = fieldType;
     field.classList.add(joined, 'Field-Entry');
     field.setAttribute('name', fieldName);
-    body.appendChild(field);
+    formDiv.appendChild(field);
   }
   //    we need this function to remove the label
   function findAllLabels(name) {
