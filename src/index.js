@@ -13,7 +13,7 @@ async function fetchWeather(fetchRequest) {
   const response = await fetch(`${fetchRequest}`, { mode: 'cors' });
   const weatherData = await response.json();
   console.log(weatherData);
-  weatherParagraph.textContent = `There are currently ${weatherData.weather[0].description} out right now and
+  weatherParagraph.textContent = `In ${weatherData.name}, there are currently ${weatherData.weather[0].description} out right now and
   the wind speed is ${weatherData.wind.speed} with a degrees of ${weatherData.wind.deg}. It feels like its
   ${weatherData.main.feels_like} outside but it really is ${weatherData.main.temp}, expect a minimum of
   ${weatherData.main.temp_min} and a maximum of ${weatherData.main.temp_max}`;
