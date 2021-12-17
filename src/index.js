@@ -1,18 +1,16 @@
 /* eslint-disable no-case-declarations */
 import createForm from './createForm';
 
-async function fetchGiffy() {
+async function fetchGiffy(searchTerm) {
   const image = document.querySelector('.giffy');
-  const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=sample', { mode: 'cors' });
+  const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=1wCBlxlhZg8hx21BVDkIfPtthGp61X1f&s=${searchTerm}`, { mode: 'cors' });
   const queryData = await response.json();
   image.src = queryData.data.images.original.url;
 }
 
 const fetchGiffyBtn = document.querySelector('.fetch-giffy');
 fetchGiffyBtn.addEventListener('click', () => {
-  fetchGiffy();
-  //    later we can add a parameter to fetchGiffy() to display for example,
-  //    a clear weather giff, for now it will display something related to sample
+  fetchGiffy('sample');
 });
 async function fetchWeather(fetchRequest) {
   const weatherParagraph = document.querySelector('.weather');
@@ -23,6 +21,7 @@ async function fetchWeather(fetchRequest) {
   the wind speed is ${weatherData.wind.speed} with a degrees of ${weatherData.wind.deg}. It feels like its
   ${weatherData.main.feels_like} outside but it really is ${weatherData.main.temp}, expect a minimum of
   ${weatherData.main.temp_min} and a maximum of ${weatherData.main.temp_max}`;
+  fetchGiffy(weatherData.weather[0].description);
 }
 const fetchWeatherBtn = document.querySelector('.fetch-weather');
 fetchWeatherBtn.addEventListener('click', () => {
