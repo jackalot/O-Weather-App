@@ -26,17 +26,32 @@ fetchWeatherBtn.addEventListener('click', () => {
   switch (dropdownBtn.textContent) {
     case 'city name':
       const cityName = document.querySelector('.city-name');
-      fetchWeather(`http://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&APPID=ea13d76af44f95e6e901a4a69585bb22`);
+      if (cityName.value !== '') {
+        fetchWeather(`http://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&APPID=ea13d76af44f95e6e901a4a69585bb22`);
+      } else {
+        const weatherParagraph = document.querySelector('.weather');
+        weatherParagraph.textContent = 'Theres no city name to search from!';
+      }
       break;
     case 'zip code and country':
       const zipCode = document.querySelector('.zip-code');
       const country = document.querySelector('.country');
-      fetchWeather(`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode.value},${country.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
+      if (zipCode.value !== '' || country !== '') {
+        fetchWeather(`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode.value},${country.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
+      } else {
+        const weatherParagraph = document.querySelector('.weather');
+        weatherParagraph.textContent = 'Theres no zipcode or country to search from!';
+      }
       break;
     case 'longitude and latitude':
       const longitude = document.querySelector('.longitude');
       const latitude = document.querySelector('.latitude');
-      fetchWeather(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude.value}&lon=${longitude.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
+      if (latitude.value !== '' || longitude !== '') {
+        fetchWeather(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude.value}&lon=${longitude.value}&appid=ea13d76af44f95e6e901a4a69585bb22`);
+      } else {
+        const weatherParagraph = document.querySelector('.weather');
+        weatherParagraph.textContent = 'Theres no latitude or longitude to search from!';
+      }
       break;
     default:
       fetchWeather('http://api.openweathermap.org/data/2.5/weather?q=Miami&APPID=ea13d76af44f95e6e901a4a69585bb22');
